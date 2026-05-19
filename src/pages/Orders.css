@@ -1,0 +1,15 @@
+.orders-page { min-height: 100vh; padding: 24px; }
+.orders-container { max-width: 900px; margin: 0 auto; }
+.orders-container h1 { font-family: 'Syne', sans-serif; font-size: 26px; display: flex; align-items: center; gap: 10px; margin-bottom: 24px; }
+.centered { display: flex; justify-content: center; align-items: center; min-height: 50vh; }
+.empty-state { text-align: center; padding: 60px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.empty-state span { font-size: 48px; }
+.orders-list { display: flex; flex-direction: column; gap: 14px; }
+.order-card { display: flex; align-items: center; gap: 16px; padding: 18px; flex-wrap: wrap; }
+.order-card img { width: 80px; height: 80px; object-fit: contain; border-radius: 10px; background: var(--surface-2); flex-shrink: 0; }
+.order-info { flex: 1; display: flex; flex-direction: column; gap: 5px; }
+.order-id-badge { font-family: monospace; font-size: 11px; color: var(--text-muted); background: var(--surface-2); padding: 3px 8px; border-radius: 6px; width: fit-content; }
+.order-info strong { font-size: 15px; font-weight: 600; }
+.order-store { display: flex; align-items: center; gap: 5px; font-size: 12px; color: var(--text-muted); }
+.order-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 13px; }
+.order-price { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700; margin-left: auto; }
