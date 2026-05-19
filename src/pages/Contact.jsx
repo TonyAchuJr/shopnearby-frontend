@@ -51,7 +51,7 @@ export default function Contact() {
             <h3>Call Us</h3>
             <p>Available Monday to Saturday, 9AM to 6PM IST.</p>
             <a href="tel:+919994220492" className="contact-link">
-              +91 98765 43210
+              +91 99942 20492
             </a>
           </div>
 
