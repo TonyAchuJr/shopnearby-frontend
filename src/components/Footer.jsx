@@ -13,7 +13,7 @@ export default function Footer() {
           <p>Find products online and buy them in your local store. Skip the delivery wait!</p>
           <div className="footer-contact-quick">
             <a href="mailto:tonyachujrart@gmail.com.com"><Mail size={14}/> tonyachujrart@gmail.com</a>
-            <a href="tel:+919876543210"><Phone size={14}/> +91 99942 20492</a>
+            <a href="tel:+919994220492"><Phone size={14}/> +91 99942 20492</a>
             <a href="https://wa.me/919994220492" target="_blank" rel="noopener noreferrer"><MessageCircle size={14}/> WhatsApp Us</a>
           </div>
         </div>
