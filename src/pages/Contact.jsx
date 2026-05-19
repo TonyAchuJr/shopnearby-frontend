@@ -203,10 +203,10 @@ export default function Contact() {
             <p>Our support team is available 6 days a week to assist you.</p>
           </div>
           <div className="banner-actions">
-            <a href="mailto:support@shopnearby.com" className="btn btn-primary">
+            <a href="mailto:tonyachujrart@gmail.com" className="btn btn-primary">
               <Mail size={16} /> Email Support
             </a>
-            <a href="https://wa.me/919876543210?text=Hi, I need help with ShopNearby" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+            <a href="https://wa.me/919994220492?text=Hi, I need help with ShopNearby" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
               <MessageCircle size={16} /> WhatsApp Us
             </a>
           </div>
