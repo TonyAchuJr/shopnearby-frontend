@@ -39,8 +39,8 @@ export default function Contact() {
             </div>
             <h3>Email Us</h3>
             <p>Send us an email anytime. We reply within 24 hours.</p>
-            <a href="mailto:support@shopnearby.com" className="contact-link">
-              support@shopnearby.com
+            <a href="mailto:tonyachujrart@gmail.com" className="contact-link">
+              tonyachujrart@gmail.com
             </a>
           </div>
 
@@ -50,7 +50,7 @@ export default function Contact() {
             </div>
             <h3>Call Us</h3>
             <p>Available Monday to Saturday, 9AM to 6PM IST.</p>
-            <a href="tel:+919876543210" className="contact-link">
+            <a href="tel:+919994220492" className="contact-link">
               +91 98765 43210
             </a>
           </div>
@@ -62,7 +62,7 @@ export default function Contact() {
             <h3>WhatsApp</h3>
             <p>Chat with us directly on WhatsApp for quick help.</p>
             <a
-              href="https://wa.me/919876543210?text=Hi, I need help with ShopNearby"
+              href="https://wa.me/919994220492?text=Hi, I need help with ShopNearby"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-link"

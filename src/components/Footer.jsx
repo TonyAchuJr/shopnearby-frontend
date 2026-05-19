@@ -12,9 +12,9 @@ export default function Footer() {
           <div className="footer-logo">🛍️ Shop<span>Nearby</span></div>
           <p>Find products online and buy them in your local store. Skip the delivery wait!</p>
           <div className="footer-contact-quick">
-            <a href="mailto:support@shopnearby.com"><Mail size={14}/> support@shopnearby.com</a>
-            <a href="tel:+919876543210"><Phone size={14}/> +91 98765 43210</a>
-            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer"><MessageCircle size={14}/> WhatsApp Us</a>
+            <a href="mailto:tonyachujrart@gmail.com.com"><Mail size={14}/> tonyachujrart@gmail.com.com</a>
+            <a href="tel:+919876543210"><Phone size={14}/> +91 99942 20492</a>
+            <a href="https://wa.me/919994220492" target="_blank" rel="noopener noreferrer"><MessageCircle size={14}/> WhatsApp Us</a>
           </div>
         </div>
 
@@ -47,7 +47,7 @@ export default function Footer() {
 
       <div className="footer-bottom">
         <p>© 2024 ShopNearby. All rights reserved.</p>
-        <p>Need help? <Link to="/contact">Visit our support page</Link> or email <a href="mailto:support@shopnearby.com">support@shopnearby.com</a></p>
+        <p>Need help? <Link to="/contact">Visit our support page</Link> or email <a href="mailto:tonyachujrart@gmail.com">tonyachujrtart@gmail.com</a></p>
       </div>
     </footer>
   );
