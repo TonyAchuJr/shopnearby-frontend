@@ -46,7 +46,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>© 2024 ShopNearby. All rights reserved.</p>
+        <p>© 2026 ShopNearby. All rights reserved.</p>
         <p>Need help? <Link to="/contact">Visit our support page</Link> or email <a href="mailto:tonyachujrart@gmail.com">tonyachujrtart@gmail.com</a></p>
       </div>
     </footer>
