@@ -1,0 +1,72 @@
+.footer {
+  background: var(--secondary);
+  color: white;
+  margin-top: 60px;
+}
+
+.footer-inner {
+  max-width: 1400px; margin: 0 auto;
+  padding: 48px 24px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+@media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .footer-inner { grid-template-columns: 1fr; } }
+
+.footer-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px; font-weight: 800;
+  margin-bottom: 12px;
+}
+.footer-logo span { color: var(--primary); }
+
+.footer-brand p {
+  font-size: 14px; opacity: 0.7; line-height: 1.6;
+  margin-bottom: 16px; max-width: 280px;
+}
+
+.footer-contact-quick {
+  display: flex; flex-direction: column; gap: 8px;
+}
+.footer-contact-quick a {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; color: rgba(255,255,255,0.75);
+  text-decoration: none; transition: color 0.2s;
+}
+.footer-contact-quick a:hover { color: var(--primary); }
+
+.footer-links { display: flex; flex-direction: column; gap: 10px; }
+.footer-links h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1px;
+  color: var(--primary); margin-bottom: 4px;
+}
+.footer-links a {
+  font-size: 13px; color: rgba(255,255,255,0.7);
+  text-decoration: none; transition: color 0.2s;
+}
+.footer-links a:hover { color: white; }
+.footer-hours { font-size: 13px; color: rgba(255,255,255,0.7); }
+
+.contact-support-btn {
+  display: inline-block;
+  background: var(--primary); color: white !important;
+  padding: 9px 18px; border-radius: 10px;
+  font-size: 13px; font-weight: 600;
+  text-decoration: none !important;
+  margin-top: 4px;
+}
+.contact-support-btn:hover { background: var(--primary-dark) !important; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 20px 24px;
+  display: flex; justify-content: space-between;
+  flex-wrap: wrap; gap: 8px;
+  max-width: 1400px; margin: 0 auto;
+}
+.footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.5); }
+.footer-bottom a { color: var(--primary); text-decoration: none; }
+.footer-bottom a:hover { text-decoration: underline; }

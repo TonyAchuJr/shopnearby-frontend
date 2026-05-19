@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import Auth from './pages/Auth';
 import ProductDetail from './pages/ProductDetail';
@@ -10,6 +11,7 @@ import Nearby from './pages/Nearby';
 import Cart from './pages/Cart';
 import Orders from './pages/Orders';
 import SellerDashboard from './pages/SellerDashboard';
+import Contact from './pages/Contact';
 
 export default function App() {
   return (
@@ -26,7 +28,9 @@ export default function App() {
             <Route path="/orders" element={<Orders />} />
             <Route path="/seller/dashboard" element={<SellerDashboard />} />
             <Route path="/seller/products" element={<SellerDashboard />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
+          <Footer />
         </CartProvider>
       </AuthProvider>
     </BrowserRouter>
