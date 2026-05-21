@@ -193,12 +193,34 @@ export default function SellerDashboard() {
               <div className="orders-list">
                 {orders.map(o => (
                   <div key={o.id} className="order-row">
-                    <div className="order-id">{o.id}</div>
-                    <div><strong>{o.product_name}</strong><span>Qty: {o.quantity}</span></div>
-                    <div>Buyer: <strong>{o.buyer_name}</strong></div>
-                    <div className="order-price">₹{o.total_price?.toLocaleString('en-IN')}</div>
-                    <span className={`badge ${o.type === 'online' ? 'badge-primary' : 'badge-success'}`}>{o.type}</span>
-                    <span className="badge badge-warning">{o.status}</span>
+                    <div className="order-row-left">
+                      <div className="order-id">{o.id}</div>
+                      <div><strong>{o.product_name}</strong><span>Qty: {o.quantity} · Buyer: {o.buyer_name}</span></div>
+                      <div className="order-price">₹{o.total_price?.toLocaleString('en-IN')}</div>
+                      <span className={`badge ${o.type === 'online' ? 'badge-primary' : 'badge-success'}`}>{o.type}</span>
+                    </div>
+                    <div className="order-row-right">
+                      <label className="status-label">Update Status</label>
+                      <select
+                        value={o.status}
+                        className="status-select"
+                        onChange={async (e) => {
+                          try {
+                            await api.put(`/orders/${o.id}/status`, { status: e.target.value });
+                            showToast(`Order ${o.id} updated to: ${e.target.value} ✅`);
+                            fetchAll();
+                          } catch { showToast('Failed to update status'); }
+                        }}
+                      >
+                        <option value="pending">⏳ Pending</option>
+                        <option value="confirmed">✅ Confirmed</option>
+                        <option value="packed">📦 Packed</option>
+                        <option value="shipped">🚚 Shipped</option>
+                        <option value="out_for_delivery">🛵 Out for Delivery</option>
+                        <option value="delivered">🎉 Delivered</option>
+                        <option value="cancelled">❌ Cancelled</option>
+                      </select>
+                    </div>
                   </div>
                 ))}
               </div>
