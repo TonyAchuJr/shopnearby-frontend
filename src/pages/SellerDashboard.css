@@ -57,3 +57,11 @@
 
 .empty-msg { color: var(--text-muted); font-size: 14px; }
 .empty-msg button { color: var(--primary); background: none; border: none; cursor: pointer; font-weight: 600; }
+
+/* Order status update */
+.order-row { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 14px; background: var(--surface-2); border-radius: 10px; flex-wrap: wrap; }
+.order-row-left { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; flex: 1; }
+.order-row-right { display: flex; flex-direction: column; gap: 4px; flex-shrink: 0; }
+.status-label { font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.status-select { padding: 8px 12px; border-radius: 8px; font-size: 13px; font-weight: 600; background: var(--surface); color: var(--text); border: 2px solid var(--primary); cursor: pointer; min-width: 180px; }
+.status-select:focus { outline: none; }
