@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { ShoppingCart, User, Search, MapPin, LogOut, Package, Store, ChevronDown, X, Menu, Phone } from 'lucide-react';
+import { ShoppingCart, User, Search, MapPin, LogOut, Package, Store, ChevronDown, X, Menu, Phone, Sun, Moon } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
+import { useTheme } from '../context/ThemeContext';
 import './Navbar.css';
 
 export default function Navbar() {
   const { user, logout } = useAuth();
   const { cartCount } = useCart();
+  const { theme, toggleTheme } = useTheme();
   const navigate = useNavigate();
   const location = useLocation();
   const [query, setQuery] = useState('');
@@ -17,7 +19,7 @@ export default function Navbar() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    if (query.trim()) { navigate(`/?q=${encodeURIComponent(query.trim())}`); setMobileSearchOpen(false); }
+    if (query.trim()) { navigate(`/?q=${encodeURIComponent(query.trim())}`); setMobileSearchOpen(false); setMobileMenuOpen(false); }
   };
 
   const isActive = (path) => location.pathname === path;
@@ -30,15 +32,23 @@ export default function Navbar() {
             🛍️ Shop<span className="logo-accent">Nearby</span>
           </Link>
 
+          {/* Desktop Search */}
           <form className="navbar-search desktop-only" onSubmit={handleSearch}>
-            <Search size={16} />
-            <input type="text" placeholder="Search products, brands..." value={query} onChange={e => setQuery(e.target.value)} />
+            <Search size={16}/>
+            <input type="text" placeholder="Search products, brands..." value={query} onChange={e => setQuery(e.target.value)}/>
             <button type="submit" className="search-btn">Search</button>
           </form>
 
+          {/* Desktop Actions */}
           <div className="navbar-actions desktop-only">
             <Link to="/nearby" className="nearby-btn"><MapPin size={14}/> Find Nearby</Link>
             <Link to="/contact" className="contact-nav-link">Help</Link>
+
+            {/* Dark mode toggle */}
+            <button className="theme-toggle" onClick={toggleTheme} title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}>
+              {theme === 'dark' ? <Sun size={18}/> : <Moon size={18}/>}
+            </button>
+
             {user ? (
               <div className="user-menu" onClick={() => setDropOpen(p => !p)}>
                 <div className="user-avatar">{user.username[0].toUpperCase()}</div>
@@ -67,6 +77,7 @@ export default function Navbar() {
             ) : (
               <Link to="/login" className="btn btn-primary login-btn">Login / Sign Up</Link>
             )}
+
             {user?.role !== 'seller' && (
               <Link to="/cart" className="cart-btn">
                 <ShoppingCart size={18}/>
@@ -75,7 +86,11 @@ export default function Navbar() {
             )}
           </div>
 
+          {/* Mobile Right */}
           <div className="mobile-right mobile-only">
+            <button className="theme-toggle" onClick={toggleTheme}>
+              {theme === 'dark' ? <Sun size={18}/> : <Moon size={18}/>}
+            </button>
             <button className="icon-btn" onClick={() => setMobileSearchOpen(p => !p)}>
               {mobileSearchOpen ? <X size={20}/> : <Search size={20}/>}
             </button>
@@ -91,16 +106,18 @@ export default function Navbar() {
           </div>
         </div>
 
+        {/* Mobile Search */}
         {mobileSearchOpen && (
           <div className="mobile-search-bar">
             <form onSubmit={handleSearch}>
               <Search size={16}/>
-              <input type="text" placeholder="Search products, brands..." value={query} onChange={e => setQuery(e.target.value)} autoFocus />
+              <input type="text" placeholder="Search products, brands..." value={query} onChange={e => setQuery(e.target.value)} autoFocus/>
               <button type="submit" className="search-btn">Go</button>
             </form>
           </div>
         )}
 
+        {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="mobile-menu">
             {user && (
@@ -140,19 +157,17 @@ export default function Navbar() {
         )}
       </nav>
 
+      {/* Bottom Nav */}
       <div className="bottom-nav mobile-only">
         <Link to="/" className={`bottom-nav-item ${isActive('/') ? 'active' : ''}`}>
-          <span style={{fontSize: 20}}>🏠</span><span>Home</span>
+          <span style={{fontSize:20}}>🏠</span><span>Home</span>
         </Link>
         <Link to="/nearby" className={`bottom-nav-item ${isActive('/nearby') ? 'active' : ''}`}>
           <MapPin size={20}/><span>Nearby</span>
         </Link>
         {user?.role !== 'seller' && (
           <Link to="/cart" className={`bottom-nav-item ${isActive('/cart') ? 'active' : ''}`}>
-            <div className="bottom-cart-wrap">
-              <ShoppingCart size={20}/>
-              {cartCount > 0 && <span className="bottom-cart-badge">{cartCount}</span>}
-            </div>
+            <div className="bottom-cart-wrap"><ShoppingCart size={20}/>{cartCount > 0 && <span className="bottom-cart-badge">{cartCount}</span>}</div>
             <span>Cart</span>
           </Link>
         )}
@@ -163,7 +178,7 @@ export default function Navbar() {
           <User size={20}/><span>{user ? 'Account' : 'Login'}</span>
         </Link>
       </div>
-      <div className="bottom-nav-spacer mobile-only" />
+      <div className="bottom-nav-spacer mobile-only"/>
     </>
   );
 }
