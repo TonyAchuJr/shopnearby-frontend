@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
+import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -16,23 +17,25 @@ import Contact from './pages/Contact';
 export default function App() {
   return (
     <BrowserRouter>
-      <AuthProvider>
-        <CartProvider>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Auth />} />
-            <Route path="/product/:id" element={<ProductDetail />} />
-            <Route path="/nearby" element={<Nearby />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/orders" element={<Orders />} />
-            <Route path="/seller/dashboard" element={<SellerDashboard />} />
-            <Route path="/seller/products" element={<SellerDashboard />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-          <Footer />
-        </CartProvider>
-      </AuthProvider>
+      <ThemeProvider>
+        <AuthProvider>
+          <CartProvider>
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Auth />} />
+              <Route path="/product/:id" element={<ProductDetail />} />
+              <Route path="/nearby" element={<Nearby />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/orders" element={<Orders />} />
+              <Route path="/seller/dashboard" element={<SellerDashboard />} />
+              <Route path="/seller/products" element={<SellerDashboard />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+            <Footer />
+          </CartProvider>
+        </AuthProvider>
+      </ThemeProvider>
     </BrowserRouter>
   );
 }
