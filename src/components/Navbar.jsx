@@ -6,6 +6,18 @@ import { useCart } from '../context/CartContext';
 import { useTheme } from '../context/ThemeContext';
 import './Navbar.css';
 
+function SpotKartLogo({ size = 'md' }) {
+  const small = size === 'sm';
+  return (
+    <div className={`spotkart-logo-wrap ${small ? 'logo-sm' : ''}`}>
+      <img src="/spotkart-logo.svg" alt="SpotKart" className="logo-img" />
+      <span className="logo-text">
+        <span className="logo-spot">Spot</span><span className="logo-kart">Kart</span>
+      </span>
+    </div>
+  );
+}
+
 export default function Navbar() {
   const { user, logout } = useAuth();
   const { cartCount } = useCart();
@@ -28,8 +40,8 @@ export default function Navbar() {
     <>
       <nav className="navbar">
         <div className="navbar-inner">
-          <Link to="/" className="navbar-logo" onClick={() => setMobileMenuOpen(false)}>
-            🛍️ Shop<span className="logo-accent">Nearby</span>
+          <Link to="/" className="navbar-logo-link" onClick={() => setMobileMenuOpen(false)}>
+            <SpotKartLogo />
           </Link>
 
           {/* Desktop Search */}
@@ -43,9 +55,7 @@ export default function Navbar() {
           <div className="navbar-actions desktop-only">
             <Link to="/nearby" className="nearby-btn"><MapPin size={14}/> Find Nearby</Link>
             <Link to="/contact" className="contact-nav-link">Help</Link>
-
-            {/* Dark mode toggle */}
-            <button className="theme-toggle" onClick={toggleTheme} title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}>
+            <button className="theme-toggle" onClick={toggleTheme} title={theme === 'dark' ? 'Light Mode' : 'Dark Mode'}>
               {theme === 'dark' ? <Sun size={18}/> : <Moon size={18}/>}
             </button>
 
