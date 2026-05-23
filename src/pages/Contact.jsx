@@ -38,7 +38,7 @@ export default function Contact() {
               <Mail size={28} color="#FF6B35" />
             </div>
             <h3>Email Us</h3>
-            <p>Send us an email anytime. We reply within 24 hours.</p>
+            <p>Send us an email anytime. We will try to reply within 24 hours or maybe longer cause its still under development.</p>
             <a href="mailto:tonyachujrart@gmail.com" className="contact-link">
               tonyachujrart@gmail.com
             </a>
@@ -62,7 +62,7 @@ export default function Contact() {
             <h3>WhatsApp</h3>
             <p>Chat with us directly on WhatsApp for quick help.</p>
             <a
-              href="https://wa.me/919994220492?text=Hi, I need help with ShopNearby"
+              href="https://wa.me/919994220492?text=Hi, I need help with SpotKart"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-link"
@@ -167,10 +167,10 @@ export default function Contact() {
                 },
                 {
                   q: 'How do I find stores near me?',
-                  a: 'Click the "Find Nearby" button, allow location access, search for a product and we will show stores near you sorted by distance.'
+                  a: 'Click the "Find Nearby" button, allow location access, search for a product and we will show stores near you sorted by distance. but they should be registered with this'
                 },
                 {
-                  q: 'How do I sell my products on ShopNearby?',
+                  q: 'How do I sell my products on SpotKart?',
                   a: 'Register as a Seller, create your store with your address, then add your products. Buyers can find your store online and visit in person.'
                 },
                 {
@@ -178,8 +178,8 @@ export default function Contact() {
                   a: 'Make sure you are using the correct email and password. If you forgot your password, contact us and we will help reset it manually.'
                 },
                 {
-                  q: 'Is ShopNearby free to use?',
-                  a: 'Yes! ShopNearby is completely free for both buyers and sellers. No hidden charges.'
+                  q: 'Is SpotKart free to use?',
+                  a: 'Yes! SpotKart is completely free for both buyers and sellers. No hidden charges.'
                 },
                 {
                   q: 'How do I report a wrong store address?',
@@ -203,10 +203,10 @@ export default function Contact() {
             <p>Our support team is available 6 days a week to assist you.</p>
           </div>
           <div className="banner-actions">
-            <a href="mailto:tonyachujrart@gmail.com" className="btn btn-primary">
+            <a href="mailto:tonyachujrart@gmail.com.com" className="btn btn-primary">
               <Mail size={16} /> Email Support
             </a>
-            <a href="https://wa.me/919994220492?text=Hi, I need help with ShopNearby" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+            <a href="https://wa.me/919994220492?text=Hi, I need help with SpotKart" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
               <MessageCircle size={16} /> WhatsApp Us
             </a>
           </div>
