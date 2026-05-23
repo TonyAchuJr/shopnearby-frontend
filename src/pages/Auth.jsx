@@ -42,8 +42,8 @@ export default function Auth() {
     <div className="auth-page">
       <div className="auth-left">
         <div className="auth-brand">
-          <span>🛍️</span>
-          <h1>ShopNearby</h1>
+          <img src="/spotkart-logo.svg" alt="SpotKart" style={{width:56,height:56,objectFit:"contain"}}/>
+          <h1><span style={{color:"#FF6B35"}}>Spot</span>Kart</h1>
           <p>Find products online.<br/>Buy them in your local store.</p>
         </div>
         <div className="auth-features">
