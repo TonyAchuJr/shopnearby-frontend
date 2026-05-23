@@ -84,8 +84,8 @@ export default function Home() {
           </Link>
         </div>
         <div className="hero-visual">
-          <div className="hero-stat"><span>🛍️</span><strong>10K+</strong> Products</div>
-          <div className="hero-stat"><span>🏪</span><strong>500+</strong> Local Stores</div>
+          <div className="hero-stat"><span>🛍️</span><strong>--</strong> Products</div>
+          <div className="hero-stat"><span>🏪</span><strong>--</strong> Local Stores</div>
           <div className="hero-stat"><span>⚡</span><strong>Same Day</strong> Pickup</div>
         </div>
       </div>
