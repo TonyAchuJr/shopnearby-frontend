@@ -108,7 +108,7 @@ export default function Contact() {
                       type="text"
                       value={form.name}
                       onChange={set('name')}
-                      placeholder="John Doe"
+                      placeholder="Adolf Hitler"
                       required
                     />
                   </div>
@@ -118,7 +118,7 @@ export default function Contact() {
                       type="email"
                       value={form.email}
                       onChange={set('email')}
-                      placeholder="john@example.com"
+                      placeholder="heil-hitler@nojews.com"
                       required
                     />
                   </div>
